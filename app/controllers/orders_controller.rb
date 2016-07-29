@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     @total = @cart.total
     @order = Order.create(amount: @total)
     redirect_to @order
+    @cart.contents.clear
   end
 
   def index
