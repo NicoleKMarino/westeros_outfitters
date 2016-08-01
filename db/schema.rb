@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160729205952) do
     t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "sub_total"
     t.integer  "quantity"
     t.decimal  "subtotal"
   end

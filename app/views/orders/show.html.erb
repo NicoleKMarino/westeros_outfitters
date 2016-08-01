@@ -19,18 +19,18 @@ Placed on: <%= @order.created_at %>
 <br></br>
 <br></br>
 <% @order.items.each do |item| %>
-<div class="caption bottom-align">
-  <ul class="rig columns-3">
-    <li>
+<div class="categories-nav">
+  <div class="thumbnail text-center">
     <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
     <%= link_to "#{item.name}", item_path(item) %>
     Quantity: <%= item.quantity(@order.id) %>
     <br></br>
     <%= item.description %>
     <br></br>
-    Item Total: <%= number_to_currency(item.subtotal(@order.id)) %>
-  </li>
-</ul>
-<% end %><br>
+    Item Total: <%=number_to_currency(item.subtotal(@order.id)) %>
+  </div>
+</div>
+<% end %>
+<br>
 </div>
 </div>
