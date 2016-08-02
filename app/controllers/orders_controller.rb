@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
     @order = @orders.new(amount: @cart.total, status: 0)
     if @order.save
       @order.add_order_items(@cart)
+      UserMailer.order_confirmation(@order, current_user).deliver_now
       redirect_to @order.paypal_url(order_path(@order))
       session[:cart] = {}
     else

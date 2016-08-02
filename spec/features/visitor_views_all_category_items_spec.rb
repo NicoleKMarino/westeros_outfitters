@@ -1,6 +1,3 @@
-# As a visitor
-# When I visit "/:CATEGORY_NAME"
-# I see all items assigned to that category
 require 'rails_helper'
 
 RSpec.feature 'Visitor views all items in category' do

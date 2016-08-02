@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserNotifier.send_signup_email(@user).deliver_now
       flash[:notice] = 'Account Successfully Created!'
       session[:user_id] = @user.id
       if @cart.items.count == 0
