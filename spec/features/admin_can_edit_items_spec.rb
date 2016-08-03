@@ -21,7 +21,7 @@ RSpec.feature 'Admin can edit an existing item' do
     click_on 'Edit This Item'
     expect(current_path).to eq("/admin/items/#{item.id}/edit")
 
-    within "#retired-status" do
+    within '#retired-status' do
       choose 'Retired'
     end
     fill_in 'Name', with: 'Water'
