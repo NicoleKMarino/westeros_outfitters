@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<h3>Thanks for ordering with us, <%= @user.username %>!</h3>
+<p>find your order details below.</p>
+<br>
+<br>
+<h3>Order Number: <%= @order.id %></h3>
+Order Status: <%= @order.status %>
+<% if @order.status == "Completed" %>
+  Order Complete
+  <%= "Submitted at #{@order.updated_at}" %>
+<% end %>
+<br></br>
+Placed on: <%= @order.created_at %>
+<br>
+<% @order.items.each do |item| %>
+    <h4><%= item.name %> - Quantity: <%= item.quantity(@order.id) %> - Item Total</h4>
+    <br></br>
+    Item Total: <%= number_to_currency(item.sub_total(@order.id)) %>
+<% end %>
+<br>
+<br>
+Total: <%= number_to_currency(@order.amount) %>
+<br>
+<br>
+<h1>Thanks for shopping with Westeros Outfitters!</h1>

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.feature 'visitor must login or create account to be able to checkout' do
   scenario 'visitor creates account after putting items in cart' do
