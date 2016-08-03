@@ -6,6 +6,11 @@
       <br>
       <strong><p>Order Total:</strong> <%= number_to_currency(order.amount) %></p>
       <br>
+      <% if order.status == 'Ordered' %>
+        <p><strong>Order Status:</strong> Ordered</p>
+      <% elsif order.status == 'Paid' %>
+        <p><strong>Order Status:</strong> Paid</p>
+      <% end %>
     <% end %>
   </div>
 </div>

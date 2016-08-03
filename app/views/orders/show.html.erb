@@ -6,7 +6,7 @@
     <strong>Amount:</strong> <%= number_to_currency(@order.amount) %>
     <br></br>
     <% if @order.status == 'Ordered' %>
-      <strong><%= button_to "Checkout", charges_path(order_id: @order.id), method: :post %></strong>
+      <strong><%= button_to "Checkout", charges_path(order_id: @order), method: :post %></strong>
     <% elsif @order.status == 'Paid' %>
       <strong>Placed on:</strong> <%= @order.created_at %>
     <% end %>
