@@ -13,11 +13,11 @@
     </article>
   </div>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Always pay your debts!"
-            data-amount="<%= @amount %>"
-            data-locale="auto"
-            window.location.href = "/orders"></script>
-  <% end %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Always pay your debts!"
+          data-amount="<%= @amount %>"
+          data-locale="auto"
+          window.location.href = "/orders"></script>
+<% end %>
   </div>
