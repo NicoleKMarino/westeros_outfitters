@@ -30,7 +30,7 @@
     </div>
     <div class="thumbnail">
       <% if current_user %>
-        <strong><%= button_to "Checkout", charges_path, method: :post unless @items.count == 0 %></strong>
+        <strong><%= button_to "Create Order", orders_path, method: :post unless @items.count == 0 %></strong>
         <br></br>
         <strong><%= link_to "Past Orders", orders_path %></strong>
       <% else %>

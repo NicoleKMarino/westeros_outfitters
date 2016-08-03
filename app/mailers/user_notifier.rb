@@ -7,7 +7,7 @@ class UserNotifier < ActionMailer::Base
     mail(to: @user.email, subject: "Welcome to Westeros Outfitters!")
   end
 
-  def send_order_confirmation(user, order)
+  def send_order_confirmation(order, user)
     @user = user
     @order = order
     mail(to: @user.email, subject: 'Westeros Outfitters has received your order!')

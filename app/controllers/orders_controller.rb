@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
     @order = @orders.new(amount: @cart.total, status: 0)
     if @order.save
       @order.add_order_items(@cart)
-      UserMailer.send_order_confirmation(@order, current_user).deliver_now
+      UserNotifier.send_order_confirmation(@order, current_user).deliver_now
       redirect_to @order
       session[:cart] = {}
     else

@@ -2,9 +2,9 @@
   <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
     <% @orders.each do |order| %>
       <h3><%= link_to "Order Number: #{order.id}", order_path(order) %></h3>
-      <strong><p>Created At: <%= order.created_at %></p></strong>
+      <strong><p>Created At:</strong> <%= order.created_at %></p>
       <br>
-      <strong><p>Order Total: <%= number_to_currency(order.amount) %></p></strong>
+      <strong><p>Order Total:</strong> <%= number_to_currency(order.amount) %></p>
       <br>
     <% end %>
   </div>
