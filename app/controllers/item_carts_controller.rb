@@ -2,7 +2,6 @@ class ItemCartsController < ApplicationController
   before_action :set_item, only: [:create, :increment, :decrement]
   before_action :add_item, only: [:create, :increment]
 
-
   def create
     session[:cart] = @cart.contents
     flash[:alert] = "#{@item.name} has been added to your cart!"
