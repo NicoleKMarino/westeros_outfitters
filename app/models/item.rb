@@ -7,6 +7,7 @@ class Item < ActiveRecord::Base
   validates :img, presence: true
   validates :price, presence: true, :numericality => {:greater_than => 0}
   validates :description, presence: true
+  validates :retired, :inclusion => {:in => [true, false]}
 
   def quantity(order_id)
     find_order_items(order_id).quantity

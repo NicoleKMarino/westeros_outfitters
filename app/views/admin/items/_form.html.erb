@@ -7,6 +7,17 @@
   </div>
   <p>
     <div class="control-group">
+      <%= f.label :retired, 'Item Status', :class => 'control-label' %>
+      <div class="controls" id='retired-status'>
+        <%= f.label 'retired_false', 'Active' %>
+        <%= f.radio_button :retired, false, :class => 'radio_button' %>
+        <%= f.label 'retired_true', 'Retired' %>
+        <%= f.radio_button :retired, true, :class => 'radio_button' %>
+      </div>
+    </div>
+  </p>
+  <p>
+    <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :name, :class => 'text_field', :placeholder => 'Name' %>
