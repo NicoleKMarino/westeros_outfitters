@@ -20,7 +20,8 @@
 <% @order.items.each do |item| %>
 <div class="categories-nav transparent">
   <div class="thumbnail col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 text-center transparent">
-    <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
+    <%= image_tag(item.img, class: "cart-img center-block", alt: item.name) %>
+    <br>
     <strong><%= link_to "#{item.name}", item_path(item) %></strong>
     <br><br>
     <%= item.description %>

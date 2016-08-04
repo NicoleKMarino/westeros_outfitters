@@ -16,7 +16,7 @@
   <ul class="row transparent col-xs-offset-1">
     <% @items.each do |item| %>
       <li class="item col-md-3 col-xs-6 text-center">
-        <img class ="index-image img-responsive center-block" src="<%= item.img %>" alt="...">
+        <%= image_tag(item.img, class: "index-image img-responsive center-block", alt: item.name) %>
         <h4><strong><%= link_to item.name, item_path(item) %></strong></h4>
         <%= number_to_currency(item.price) %>
         <h4><strong><%= link_to "Item Retired",item_path(item.id) if item.retired %></strong></h4>

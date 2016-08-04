@@ -15,7 +15,8 @@
         <br>
         <div class="col-centered text-center transparent">
           <p>
-            <img src='<%= @item.img %>' class="show-image center-block"/><br>
+            <%= image_tag(item.img, class: "show-image center-block", alt: item.name) %>
+            <br>
             <strong><%= number_to_currency(@item.price) %></strong>
             <br></br>
             <%= @item.description %>

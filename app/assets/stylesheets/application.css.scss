@@ -14,8 +14,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Kite+One);
-@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+@import url(https://fonts.googleapis.com/css?family=Kite+One);
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,700);
 
 *, *:before, *:after {
   margin: 0;
@@ -160,7 +160,7 @@ s:nth-of-type(2) {
 }
 
 body {
-  background: url("http://wallpapersinsider.com/wp-content/uploads/2016/03/Game-of-Thrones-Minimal-Wallpapers.jpg") no-repeat center center fixed;
+  background: image-url("BG.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -436,7 +436,7 @@ h1.home {
 }
 
 body.bg-404 {
-  background: url("/assets/gendry404.jpg") no-repeat center center fixed;
+  background: image-url('gendry404.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
