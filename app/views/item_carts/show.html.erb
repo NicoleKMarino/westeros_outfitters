@@ -6,7 +6,7 @@
         <hr>
         <br></br>
         <% @items.each do |item| %>
-          <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
+          <img class='cart-img' src='<%= item.img %>'/><br>
           <br></br>
           <strong><%= item.name %> <%= number_to_currency(item.price) %></strong>
           <br></br>

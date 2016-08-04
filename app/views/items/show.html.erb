@@ -8,17 +8,17 @@
 </h1>
 <div class="col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-9 col-lg-6 col-centered">
   <div class="thumbnail">
-    <div class="caption bottom-align">
+    <div class="caption bottom-align text-center">
       <% if current_admin? %>
       <strong><%= link_to "Edit This Item", edit_admin_item_path(@item) %></strong>
       <% end %>
         <br>
-        <div class="col-centered">
+        <div class="col-centered text-center">
         <p><img src='<%= @item.img %>' class="show-image pull-center"/>
         <strong><%= number_to_currency(@item.price) %></strong>
         <br></br>
         <%= @item.description %>
-        <%= button_to "Add to Cart", cart_path(id: @item.id), class: "button btn-success pull-right show-button" unless @item.retired%>
+        <%= button_to "Add to Cart", cart_path(id: @item.id), class: "btn btn-success" unless @item.retired%>
       </p>
       <br>
     </div>
