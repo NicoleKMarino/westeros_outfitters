@@ -15,7 +15,7 @@
 <div>
   <ul class="row transparent">
     <% @items.each do |item| %>
-      <li class="item col-md-3 col-xs-6">
+      <li class="item col-md-3 col-xs-6 text-center">
         <img class ="index-image img-responsive center-block" src="<%= item.img %>" alt="...">
         <h4><strong><%= link_to item.name, item_path(item) %></strong></h4>
         <%= number_to_currency(item.price) %>
@@ -24,7 +24,7 @@
         <div class="item-description">
           <p><%= item.description %></p>
         </div>
-        <%= button_to "Add to Cart", cart_path(id: item.id), class: "button btn bottom-right" unless item.retired %>
+        <%= button_to "Add to Cart", cart_path(id: item.id), class: "btn btn-success bottom-right" unless item.retired %>
       </li>
     <% end %>
   </ul>
