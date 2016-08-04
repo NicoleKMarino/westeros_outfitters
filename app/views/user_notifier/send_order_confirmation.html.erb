@@ -14,13 +14,13 @@
 <strong>Placed on:</strong> <%= @order.created_at %>
 <br>
 <% @order.items.each do |item| %>
-    <h4><%= item.name %> - Quantity: <%= item.quantity(@order.id) %> - Item Total: <%= @order.amount %></h4>
+    <h4><%= item.name %> - Quantity: <%= item.quantity(@order.id) %> - Item Total: $<%= @order.amount %></h4>
     <br></br>
     <strong>Item Total:</strong> <%= number_to_currency(item.sub_total(@order.id)) %>
 <% end %>
 <br>
 <br>
-<strong>Total:</strong> <%= number_to_currency(@order.amount) %>
+<strong>Total:</strong> $<%= number_to_currency(@order.amount) %>
 <br>
 <br>
 <h1>Thanks for shopping with Westeros Outfitters!</h1>
