@@ -1,12 +1,13 @@
-<div class="categories-nav">
-  <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail text-center categories-nav">
+<div class="categories-nav transparent">
+  <div class="col-xs-offset-3 col-sm-offset-3 col-xs-6 thumbnail text-center categories-nav transparent">
     <h3>Order Number: <%= @order.id %></h3>
+    <hr>
     <strong>Order Status:</strong> <%= @order.status %>
     <br>
     <strong>Amount:</strong> <%= number_to_currency(@order.amount) %>
     <br></br>
     <% if @order.status == 'Ordered' %>
-      <strong><%= button_to "Checkout", charges_path(order_id: @order), method: :post %></strong>
+      <strong><%= button_to "Checkout", charges_path(order_id: @order), method: :post, class: "button btn" %></strong>
     <% elsif @order.status == 'Paid' %>
       <strong>Placed on:</strong> <%= @order.created_at %>
     <% end %>
@@ -17,11 +18,11 @@
 <br></br>
 <br></br>
 <% @order.items.each do |item| %>
-<div class="categories-nav">
-  <div class="thumbnail text-center">
+<div class="categories-nav transparent">
+  <div class="thumbnail col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 text-center transparent">
     <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
     <strong><%= link_to "#{item.name}", item_path(item) %></strong>
-    <br>
+    <br><br>
     <%= item.description %>
     <br></br>
     <strong>Quantity:</strong> <%= item.quantity(@order.id) %>
