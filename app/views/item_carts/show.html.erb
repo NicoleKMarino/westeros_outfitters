@@ -1,8 +1,9 @@
 <div class="categories-nav">
-  <div class="col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 col-lg-3 text-center">
+  <div class="col-xs-offset-3 col-sm-offset-4 col-xs-6 col-md-4 text-center">
     <div class="thumbnail">
       <div class="caption bottom-align">
         <h1>Your Cart:</h1>
+        <hr>
         <br></br>
         <% @items.each do |item| %>
           <img src='<%= item.img %>' style="max-height: 100px; max-width: 100px;" /><br>
@@ -11,11 +12,11 @@
           <br></br>
           Quantity: <%= @cart.quantity(item) %>
           <br></br>
-          <div class="col-md-2 col-md-offset-3">
-            <%= button_to '+', increment_path(id: item.id), method: :put, class: "btn btn-primary" %>
-          </div>
-          <div class="col-md-2 col-md-offset-1">
+          <div class="col-md-2 col-md-offset-4">
             <%= button_to '-', decrement_path(id: item.id), method: :put, class: "btn btn-danger" %>
+          </div>
+          <div class="col-md-2 col-md-offset-0">
+            <%= button_to '+', increment_path(id: item.id), method: :put, class: "btn btn-primary" %>
           </div>
           <br></br>
           <%= item.description %>
@@ -24,6 +25,7 @@
           <br></br>
           <%= button_to "Remove", cart_path(id: item.id), method: :delete %>
           <br></br>
+          <hr>
         <% end %>
         <h3>Total: <%= number_to_currency(@cart.total) %></h3>
       </div>

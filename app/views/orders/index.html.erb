@@ -1,11 +1,10 @@
 <div class="categories-nav">
-  <div class="col-xs-offset-3 col-sm-offset-0 col-xs-6 thumbnail">
+  <div class="col-xs-offset-3 col-sm-offset-3 col-xs-6 thumbnail text-center">
     <% @orders.each do |order| %>
       <h3><%= link_to "Order Number: #{order.id}", order_path(order) %></h3>
+      <hr><br>
       <strong><p>Created At:</strong> <%= order.created_at %></p>
-      <br>
       <strong><p>Order Total:</strong> <%= number_to_currency(order.amount) %></p>
-      <br>
       <% if order.status == 'Ordered' %>
         <p><strong>Order Status:</strong> Ordered</p>
       <% elsif order.status == 'Paid' %>
